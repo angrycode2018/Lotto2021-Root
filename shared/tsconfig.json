@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "experimentalDecorators": true, // <--- ต้องเป็น true
+    "emitDecoratorMetadata": true,  // <--- ต้องเป็น true
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "paths": {
+      "@project/shared": ["./index.ts"]
+    }
+  },
+  "include": ["src/**/*", "models/**/*", "index.ts"]
+}

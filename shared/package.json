@@ -1,0 +1,10 @@
+{
+  "name": "@project/shared",
+  "private": true,
+  "type": "module",
+  "main": "./index.ts",
+  "dependencies": {
+    "class-transformer": "^0.5.1",
+    "reflect-metadata": "^0.2.2"
+  }
+}

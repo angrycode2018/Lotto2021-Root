@@ -1,0 +1,11 @@
+{
+    "files.autoSave": "afterDelay",
+    "editor.fontSize": 17,
+    "editor.wordWrap": "off",
+    
+  "editor.formatOnSave": false,
+  "editor.formatOnType": false,
+  "editor.formatOnPaste": false
+
+
+}

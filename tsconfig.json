@@ -1,0 +1,58 @@
+{
+  // Visit https://aka.ms/tsconfig to read more about this file
+  "compilerOptions": {
+    // File Layout
+    "rootDir": "./server",
+    "outDir": "./dist",
+
+    // Environment Settings
+    // See also https://aka.ms/tsconfig/module
+    "target": "esnext",
+    "types": [],
+    "paths": {
+      "@server/*": ["./server/*"],     // แมปไปที่โฟลเดอร์ server
+      "@frontend/*": ["./frontend/src/*"], // (แถม) สำหรับฝั่ง frontend
+      "@project/shared": ["./shared/index.ts"] // แมปไปที่ shared ตรงๆ
+    },
+    /* 1. ปรับคู่ module และ moduleResolution ให้สอดคล้องกัน */
+    "module": "NodeNext",
+     "moduleResolution": "NodeNext", // สำคัญ: ช่วยให้ TS เข้าใจการแมปไฟล์ในระบบสมัยใหม่
+
+     /* 3. การตั้งค่าสำหรับ class-transformer */
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    
+     "allowImportingTsExtensions": false, // ปกติห้าม import .ts ตรงๆ
+    "noImplicitAny": false, // ปิดชั่วคราวเพื่อเช็คว่า error หายไหม
+
+    // Other Outputs
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+
+    // Stricter Typechecking Options
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": false,//default true
+
+    // Recommended Options
+    "jsx": "react-jsx",
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "noUncheckedSideEffectImports": true,
+    "moduleDetection": "force",
+    "skipLibCheck": true,
+
+    //Compatible with Javascript
+    "allowJs": true,      // Allows you to keep your .js files
+    "checkJs": false,  // Set this to false to stop reporting errors in .js files
+    // "checkJs": true,      // (Optional) TypeScript will highlight errors in your JS files
+    "noEmit": true,       // TS will only check for errors, not create new files yet
+    "strict": true,       // Keeps rules relaxed so your project doesn't immediately fail
+
+    /* 4. การตั้งค่าอื่นๆ เพื่อความลื่นไหล */
+    "esModuleInterop": true,
+  },
+
+  "include": ["server/**/*"],     // Only look for source code in src
+  "exclude": ["public", "node_modules", "dist"] // Explicitly ignore frontend
+}
